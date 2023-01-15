@@ -1,0 +1,28 @@
+
+.heading {
+    padding-left: 40%;
+    color:rgb(39, 118, 170);
+}
+form input {
+    display: block;
+    margin: 20px;
+    padding: 7px;
+    width: 300px;
+    border: 1px skyblue solid;
+}
+
+.in {
+    padding-left: 40%;
+    padding-bottom: 10px;
+}
+
+button {
+    padding:10px;
+    width: 120px;
+    margin-left: 15%;
+    border-radius: 40px;
+    border-color: orange;
+    background-color: skyblue;
+    cursor: pointer;
+    font-size: 15px;
+}
