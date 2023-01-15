@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './signup.css';
 
 
@@ -10,6 +10,13 @@ const Signup=()=>{
     const [password,setPassword]=useState("");
     const [email,setEmail]=useState("");
     const navigate=useNavigate();
+
+    useEffect(()=>{
+        const auth=localStorage.getItem("user");
+        if(auth){
+            navigate("/");
+        }
+    })
 
 
    /// using fetch function which is built in javascript module
@@ -38,15 +45,10 @@ const Signup=()=>{
         const result = await axios.post(baseUrl, data);
         console.log(result);
         if (result){
-                        navigate("/login");
+                        navigate("/");
                     }
         localStorage.setItem("user",JSON.stringify(result));        
         }
-
-
-
-
-
 
     return(
            <form>
