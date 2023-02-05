@@ -20,22 +20,22 @@ app.post("/register",async(req,resp)=>{
 });
 
 // // log in api
-// app.post("/login",async(req,resp)=>{
+app.post("/login",async(req,resp)=>{
 
-//     if (req.body.email && req.body.password){
-//         let user=await User.findOne(req.body).select("-password");
-//    if(user){
-//     resp.send(user);
-//    }
-//    else{
-//     resp.send({"result":"user not found"});
+    if (req.body.email && req.body.password){
+        let user=await User.findOne(req.body).select("-password");
+   if(user){
+    resp.send(user);
+   }
+   else{
+    resp.send({result:"user not found"});
 
-//    }
+   }
         
-//     }
-//     else{
-//         resp.send({"result":"data insufficient"});
-//     }
+    }
+    else{
+        resp.send({result:"data insufficient"});
+    }
     
-// });
+});
 app.listen(8000);
