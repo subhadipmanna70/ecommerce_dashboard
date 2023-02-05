@@ -17,10 +17,13 @@ const Nav=()=>{
             <li><Link to="/add">Add Products</Link></li>
             <li><Link to="/update">Update Products</Link></li>
             <li><Link to="/profile">Profile</Link></li>
-            {/* <li><Link to="/login">Login</Link></li> */}
 
-            <li>{ auth?<Link onClick={handle} to="/signup">Logout</Link>:<Link to="/signup">Signup</Link>}</li>
-
+            <li>{ auth?<Link onClick={handle} to="/signup">Logout</Link>:
+            <>
+            <Link to="/signup">Signup</Link>
+            <Link to="/login">Login</Link>
+            </>
+            }</li>
         </ul>
 
     )

@@ -1,31 +1,45 @@
 
-
-// import {useNavigate} from 'react-router-dom'
-import React,{useState} from 'react';
+import axios from "axios";
+import {useNavigate} from 'react-router-dom'
+import React,{useEffect, useState} from 'react';
 import './signup.css';
 
 
 const Login=()=>{
     const [password,setPassword]=useState("");
     const [email,setEmail]=useState("");
-    // const navigate=useNavigate();
+    const navigate=useNavigate();
+//if user has already logged in then can not go back to log in page without logout
+
+    useEffect(()=>{
+        const auth=localStorage.getItem("user");
+        if(auth){
+          navigate("/");
+         }
+    })
 
 
 
-
-    // const collectData=async ()=>{
-    //         console.log(name,password,email);
-    //         const result= await fetch("http://localhost:8000/register",{
-    //             method:"post",
-    //             body: JSON.stringify({name,password,email}),
-    //             headers:{"Content-Type":"application/json"}
-    //         });
-    //         // console.warn(await result.json());
-    //         if (result){
-    //             navigate("/login");
-    //         }
-
-    // }
+    const handlelogin=async(e)=>{
+        if(email && password){ e.preventDefault();
+            let data={email,password};
+    
+            const baseURL="http://localhost:8000/login";
+            let result= await axios.post(baseURL,data);
+            // console.log(result.data.name);
+            if(result.data.name){
+                navigate("/");
+                localStorage.setItem("user",JSON.stringify(result.data));
+            }
+            else{
+                alert("please enter correct details");
+            }
+        }
+        else{
+            alert("enter both field");
+        }
+       
+    }
 
 
 
@@ -38,7 +52,7 @@ const Login=()=>{
                 <div className='in'>
                     <input type="email" placeholder='Enter Mail id' value={email} onChange={(e)=>setEmail(e.target.value)}/>
                     <input type="password" placeholder='Enter password' value={password} onChange={(e)=>setPassword(e.target.value) }/>
-                    <button>Login</button>
+                    <button onClick={(e)=>handlelogin(e)}>Login</button>
                 </div>
            </form>
 )
