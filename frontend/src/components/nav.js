@@ -12,20 +12,24 @@ const Nav=()=>{
     }
 
     return(
-        <ul className='nav-ul'>
+        <div>
+        {/* <img alt src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Ffree-vector%2Fe-commerce-logo&psig=AOvVaw19yIadoV3O-fnS4nonmu_B&ust=1675692025156000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJiU_7DF_vwCFQAAAAAdAAAAABAE'/> */}
+       { auth?<ul className='nav-ul'>
             <li><Link to="/">Products</Link></li>
             <li><Link to="/add">Add Products</Link></li>
             <li><Link to="/update">Update Products</Link></li>
             <li><Link to="/profile">Profile</Link></li>
-            {
-            auth?<li><Link onClick={handle} to="/signup">Logout</Link></li>:
-            <>
-            <li><Link to="/signup">Signup</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            </>
-            }
+            <li><Link onClick={handle} to="/signup">Logout</Link></li>
+           
 
         </ul>
+        :
+        <ul className='nav-ul rightnav'>
+            <li><Link to="/signup">Signup</Link></li>
+            <li><Link to="/login">Login</Link></li>
+        </ul>
+    }
+    </div>
 
     )
 }

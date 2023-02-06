@@ -6,6 +6,10 @@
     padding: 5px;
 }
 
+.rightnav{
+    text-align: right;
+}
+
 .foot {
     background-color:rgba(106, 199, 236, 0.938);
     bottom: 0%;
