@@ -2,6 +2,8 @@ const express= require ("express");
 const cors=require("cors");
 const dbConnect=require ("./db/config");
 const User=require('./db/user');
+const Product=require('./db/product');
+
 const app=express();
 
 app.use(express.json());
@@ -15,7 +17,6 @@ app.post("/register",async(req,resp)=>{
     let result=await user.save();
      result=result.toObject();
      delete result.password;
-    
     resp.send(result);
 });
 
@@ -38,4 +39,13 @@ app.post("/login",async(req,resp)=>{
     }
     
 });
+
+
+// add product api
+app.post("/add-product",async(req,resp)=>{
+let product=new Product(req.body);
+let result=await product.save();
+resp.send(result);
+});
+
 app.listen(8000);

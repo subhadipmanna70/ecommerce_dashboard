@@ -1,6 +1,6 @@
 import './App.css';
 import Nav from './components/nav';
-
+import AddProduct from './components/addproduct';
 import Footer from './components/footer';
 import Signup from './components/signup';
 import Login from './components/login';
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route element={<PrivateComponent/>}>
         <Route path="/" element={<h1>product listing page</h1>}/>
-        <Route path="/add" element={<h1>Add product page</h1>}/>
+        <Route path="/add" element={<AddProduct/>}/>
         <Route path="/update" element={<h1>Update product page</h1>}/>
         <Route path="/profile" element={<h1>Profile page</h1>}/>
         </Route>

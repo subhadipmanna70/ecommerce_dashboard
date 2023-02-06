@@ -2,7 +2,7 @@
 import axios from "axios";
 import {useNavigate} from 'react-router-dom'
 import React,{useEffect, useState} from 'react';
-import './signup.css';
+import './page.css';
 
 
 const Login=()=>{

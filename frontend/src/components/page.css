@@ -3,7 +3,7 @@
     padding-left: 40%;
     color:rgb(39, 118, 170);
 }
-form input {
+form input,.input {
     display: block;
     margin: 20px;
     padding: 7px;
