@@ -34,7 +34,7 @@ const AddProduct=()=>{
             <input type="number" placeholder="Product Price" value={price} onChange={(e)=>setPrice(e.target.value)} className='input'/>
             <input type="text" placeholder="Product Category" value={category} onChange={(e)=>setCategory(e.target.value)} className='input'/>
             <input type="text" placeholder="Product Company" value={company} onChange={(e)=>setCompany(e.target.value)} className='input'/>
-            <button onClick={addProduct}>Add Product</button>
+            <button className="bt" onClick={addProduct}>Add Product</button>
         </div>
     )
 }

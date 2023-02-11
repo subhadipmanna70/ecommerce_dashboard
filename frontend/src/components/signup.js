@@ -58,7 +58,7 @@ const Signup=()=>{
                     <input type="text"  placeholder='Enter Name' value={name} onChange={(e)=>setName(e.target.value) }/>
                     <input type="password" placeholder='Enter password' value={password} onChange={(e)=>setPassword(e.target.value) }/>
                     <input type="email" placeholder='Enter Mail id' value={email} onChange={(e)=>setEmail(e.target.value)}/>
-                    <button onClick={(e)=>CollectData(e)}>register</button>
+                    <button className="bt" onClick={(e)=>CollectData(e)}>register</button>
                 </div>
            </form>
 )

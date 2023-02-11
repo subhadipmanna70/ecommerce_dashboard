@@ -14,6 +14,16 @@ const Products = () => {
     setProductlist(getProduct.data);
   };
 
+    const deleteProduct=async(id)=>{
+      
+      let result= await axios.delete(`http://localhost:8000/delete-product/${id}`);
+      getProductlist();
+      if(result.data.deletedCount){
+        alert("product deleted");
+      }
+     
+    };
+
   return (
     <div className='product-list'>
       <h3>Product List</h3>
@@ -22,14 +32,17 @@ const Products = () => {
         <li>Category</li>
         <li>Name</li>
         <li>Price</li>
+        <li>Operation</li>
+
       </ul>
    {
      productlist.map((item,index)=>
-      <ul>
+      <ul key={item._id}>
         <li>{index+1}</li>
         <li>{item.category}</li>
         <li>{item.name}</li>
         <li>{item.price}</li>
+        <li style={{paddingBottom:"8px"}} onClick={()=>deleteProduct(item._id)} ><button>DELETE</button></li>
       </ul>
      )  
   }

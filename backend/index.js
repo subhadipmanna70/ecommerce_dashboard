@@ -43,12 +43,12 @@ app.post("/login",async(req,resp)=>{
 
 // add product api
 app.post("/add-product",async(req,resp)=>{
-let product=new Product(req.body);
-let result=await product.save();
-resp.send(result);
+    let product=new Product(req.body);
+    let result=await product.save();
+    resp.send(result);
 });
 
-// show products api
+// show products list api
 app.get("/products",async(req,resp)=>{
     let products= await Product.find();
     if(products.length>0){
@@ -57,6 +57,11 @@ app.get("/products",async(req,resp)=>{
     else{
         resp.send({result:"no product available"});
     }
+});
+
+app.delete("/delete-product/:id",async(req,resp)=>{
+    let result=await Product.deleteOne({_id:req.params.id});
+    resp.send(result);
 })
 
 app.listen(8000);

@@ -16,7 +16,7 @@ form input,.input {
     padding-bottom: 10px;
 }
 
-button {
+.bt {
     padding:10px;
     width: 120px;
     margin-left: 15%;
@@ -37,10 +37,14 @@ button {
 .product-list ul li{
     display: inline-block;
     border: 2px solid skyblue;
-    padding:5px;
+    padding:10px;
     width: 200px;
 }
 
 .product-list ul{
     margin: 0px;
+}
+
+.product-list ul li button{
+    color: blueviolet;
 }
