@@ -26,3 +26,21 @@ button {
     cursor: pointer;
     font-size: 15px;
 }
+
+.product-list{
+
+    text-align: center;
+    margin-top: 50px;
+    
+}
+
+.product-list ul li{
+    display: inline-block;
+    border: 2px solid skyblue;
+    padding:5px;
+    width: 200px;
+}
+
+.product-list ul{
+    margin: 0px;
+}

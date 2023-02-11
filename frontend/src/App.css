@@ -18,6 +18,10 @@
     position: absolute;
 
 }
+.product-list{
+    text-align: center;
+}
+
 
 
 .nav-ul li {
@@ -32,3 +36,4 @@ margin-left: 3px;
     padding: 5px;
     text-decoration:none;
 }
+

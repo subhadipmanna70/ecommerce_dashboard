@@ -1,9 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import './page.css';
-
-
-
+import "./page.css";
 const AddProduct=()=>{
     const [name,setName]=useState("");
     const [price,setPrice]=useState("");
@@ -41,5 +38,4 @@ const AddProduct=()=>{
         </div>
     )
 }
-
 export default AddProduct;

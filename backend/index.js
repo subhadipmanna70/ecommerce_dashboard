@@ -48,4 +48,15 @@ let result=await product.save();
 resp.send(result);
 });
 
+// show products api
+app.get("/products",async(req,resp)=>{
+    let products= await Product.find();
+    if(products.length>0){
+        resp.send(products);
+    }
+    else{
+        resp.send({result:"no product available"});
+    }
+})
+
 app.listen(8000);

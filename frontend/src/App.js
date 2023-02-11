@@ -4,6 +4,8 @@ import AddProduct from './components/addproduct';
 import Footer from './components/footer';
 import Signup from './components/signup';
 import Login from './components/login';
+import Products from './components/products';
+
 import PrivateComponent from './components/privatecomponent';
 
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
@@ -15,7 +17,7 @@ function App() {
       <Nav/>
       <Routes>
         <Route element={<PrivateComponent/>}>
-        <Route path="/" element={<h1>product listing page</h1>}/>
+        <Route path="/" element={<Products/>}/>
         <Route path="/add" element={<AddProduct/>}/>
         <Route path="/update" element={<h1>Update product page</h1>}/>
         <Route path="/profile" element={<h1>Profile page</h1>}/>
