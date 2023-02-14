@@ -42,13 +42,15 @@ const Signup=()=>{
     const CollectData = async(e) =>{
         e.preventDefault();
         const baseUrl = "http://localhost:8000/register";
-        const data = {name,email,password};
+        const data = {name,email,password ,header:{}};
         const result = await axios.post(baseUrl, data);
         console.log(result);
         if (result){
                         navigate("/");
                     }
-        localStorage.setItem("user",JSON.stringify(result));        
+        localStorage.setItem("user",JSON.stringify(result.data.result));
+        localStorage.setItem("token",JSON.stringify(result.data.auth));        
+        
         }
 
     return(

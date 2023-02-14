@@ -48,3 +48,11 @@ form input,.input {
 .product-list ul li button{
     color: blueviolet;
 }
+
+.searchbox{
+    width:300px;
+    height:30px;
+    margin-bottom:20px;
+    border:2px solid deepskyblue;
+    border-radius:242px
+}

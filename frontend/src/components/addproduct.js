@@ -13,7 +13,8 @@ const AddProduct=()=>{
             console.log(userId);
             let data={name,price,category,company,userId};
             const baseURL="http://localhost:8000/add-product";
-            let add= await axios.post(baseURL,data);
+            let add= await axios.post(baseURL,data,{headers: {authorization: JSON.parse(localStorage.getItem("token"))
+        }});
             if(add){
                 alert("product successfully added");
                 setName("");

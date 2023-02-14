@@ -26,10 +26,13 @@ const Login=()=>{
     
             const baseURL="http://localhost:8000/login";
             let result= await axios.post(baseURL,data);
-            // console.log(result.data.name);
-            if(result.data.name){
+            // console.log(result);
+            if(result.data.auth){
+                localStorage.setItem("user",JSON.stringify(result.data.user));
+                localStorage.setItem("token",JSON.stringify(result.data.auth));
+
                 navigate("/");
-                localStorage.setItem("user",JSON.stringify(result.data));
+
             }
             else{
                 alert("please enter correct details");
